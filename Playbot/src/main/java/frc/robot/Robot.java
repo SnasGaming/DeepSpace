@@ -150,6 +150,7 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void robotPeriodic() {
+    System.out.println("Periodic Robot Method");
   }
 
   /**
