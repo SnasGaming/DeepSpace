@@ -7,7 +7,7 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Victor;
@@ -18,7 +18,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.BuiltInAccelerometer;
-import edu.wpi.first.wpilibj.AnalogAccelerometer;
 import edu.wpi.first.wpilibj.interfaces.Accelerometer;
 
 import org.opencv.core.Mat;
@@ -37,7 +36,7 @@ import edu.wpi.first.cameraserver.CameraServer;
  * creating this project, you must also update the build.gradle file in the
  * project.
  */
-public class Robot extends IterativeRobot {
+public class Robot extends TimedRobot {
   private static final String kDefaultAuto = "Default";
   private static final String kCustomAuto = "My Auto";
   private String m_autoSelected;
@@ -213,7 +212,7 @@ public class Robot extends IterativeRobot {
 
   	//updates the value of the sonar sensor
 	public void getDistance() {
-		this.currentDistance1 = m_ultrasonic1.getValue()*this.kValueToInches;
+		this.currentDistance1 = m_ultrasonic1.getValue()*kValueToInches;
 		SmartDashboard.putNumber("distance right", currentDistance1);
 	}
 	
